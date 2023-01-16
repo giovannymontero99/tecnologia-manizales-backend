@@ -1,0 +1,13 @@
+const http = require('http');
+const app = require('../app.js');
+
+const validatePort = (value)=>{
+    const port = parseInt(value, 10);
+    if( isNaN(port) ) return value;
+    if(port >= 0 ) return port;
+}
+
+const port = validatePort( process.env.PORT || 3030);
+
+http.createServer(app);
+app.listen(port,'192.168.1.150', ()=> console.log(`Server on port: ${port}`));
