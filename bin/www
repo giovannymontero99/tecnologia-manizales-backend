@@ -10,4 +10,4 @@ const validatePort = (value)=>{
 const port = validatePort( process.env.PORT || 3030);
 
 http.createServer(app);
-app.listen(port,'192.168.1.150', ()=> console.log(`Server on port: ${port}`));
+app.listen(port, ()=> console.log(`Server on port: ${port}`));
